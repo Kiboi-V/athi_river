@@ -14,16 +14,15 @@ body {
     height: 100vh;
 }
 
-/* Control Panel Styles */
 .control-panel {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 350px;
+    top: 8px;
+    left: 8px;
+    width: 100px;
     background: white;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    z-index: 1000;
+    z-index: 800;
     transition: all 0.3s ease;
     border: 1px solid #e1e5e9;
 }
@@ -32,7 +31,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 20px;
+    padding: 14px 16px;
     background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
     border-radius: 12px 12px 0 0;
@@ -41,7 +40,7 @@ body {
 .panel-header h3 {
     margin: 0;
     flex-grow: 1;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
 }
 
@@ -56,13 +55,10 @@ body {
     transition: background 0.3s;
 }
 
-#togglePanel:hover {
-    background: rgba(255,255,255,0.1);
-}
 
 .panel-content {
     padding: 20px;
-    max-height: 80vh;
+    max-height: 60vh;
     overflow-y: auto;
 }
 
@@ -120,7 +116,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Overlay Layers Controls - Improved List Style */
 .overlay-controls {
     display: flex;
     flex-direction: column;
@@ -173,19 +168,6 @@ body {
     margin: 0;
     transform: scale(1.2);
     accent-color: #3498db;
-}
-
-/* Layer Icons */
-.overlay-controls label[for="drone"]::after { content: '🚁'; }
-.overlay-controls label[for="parcels"]::after { content: '📄'; }
-.overlay-controls label[for="buildings"]::after { content: '🏠'; }
-.overlay-controls label[for="buildings_under_construction"]::after { content: '🏗️'; }
-.overlay-controls label[for="electric_poles"]::after { content: '⚡'; }
-
-.overlay-controls label span {
-    flex: 1;
-    font-weight: 500;
-    color: #2c3e50;
 }
 
 /* Search Controls */
