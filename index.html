@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athi River</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@8.2.0/ol.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="panel-header">
+            <h3>Athi River Survey</h3>
+            <button id="togglePanel">☰</button>
+        </div>
+        
+        <div class="panel-content">
+           
+            <div class="control-section">
+                <h4>Base Maps</h4>
+                <div class="base-layer-controls">
+                    <label>
+                        <input type="radio" name="baseLayer" value="satellite" checked> 
+                        Satellite
+                    </label>
+                    <label>
+                        <input type="radio" name="baseLayer" value="streets"> 
+                        Streets
+                    </label>
+                </div>
+            </div>
+
+        
+            <div class="control-section">
+                <h4>🗂️ Overlay Layers</h4>
+                <div class="overlay-controls">
+                    <label><input type="checkbox" id="drone"> Drone Imagery</label>
+                    <label><input type="checkbox" id="parcels" checked> Parcels</label>
+                    <label><input type="checkbox" id="buildings" checked> Buildings</label>
+                    <label><input type="checkbox" id="buildings_under_construction">Buildings Under Construction</label>
+                    <label><input type="checkbox" id="electric_poles">Electric Poles</label>
+                  </div>
+            </div>
+
+            <!-- Search Section -->
+            <div class="control-section">
+                <h4>🔍 Search</h4>
+                <div class="search-controls">
+                    <input type="text" id="parcelSearch" placeholder="Enter parcel number...">
+                    <button onclick="searchParcel()">Search</button>
+                    
+                    <div class="query-buttons">
+                        <button onclick="countBuildings()">🏠 Count Buildings</button>
+                        <button onclick="measureArea()">📐 Measure Area</button>
+                        <button onclick="showAllConstruction()">🏗️ Show Construction</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="control-section">
+                <h4>📈 Results</h4>
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="popup" class="ol-popup">
+        <div id="popup-content"></div>
+        <div class="popup-closer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@8.2.0/dist/ol.js"></script>
+    <script src="js/layers.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
